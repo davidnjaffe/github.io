@@ -1,0 +1,33 @@
+{
+  "name": "jaffe-react-portfolio",
+  "version": "1.0.0",
+  "description": "React Based Portfolio",
+  "engines": {
+    "node": "11.7.x"
+  },
+  "main": "server.js",
+  "scripts": {
+    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "start:prod": "node server.js",
+    "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
+    "client": "cd client && npm run start",
+    "install": "cd client && npm install",
+    "build": "cd client && npm run build",
+    "heroku-postbuild": "npm run build"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^4.1.0",
+    "nodemon": "^1.19.4"
+  },
+  "dependencies": {
+    "boostrap": "^2.0.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.16.3",
+    "gh-pages": "^3.1.0",
+    "hash-router": "^0.4.0",
+    "if-env": "^1.0.4",
+    "styled-components": "^5.2.1"
+  }
+}
